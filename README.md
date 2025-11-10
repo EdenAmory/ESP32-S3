@@ -14,7 +14,7 @@
 3.  **BUTTON A & B** (Input) - Pin 35, 19
 4.  **POTENSIOMETER (POT)** (Input Analog) - Pin 5
 5.  **OLED Display** (Output) - Pin 38 (SDA), 39 (SCL)
-6.  **ENCODER** (Input) - Pin 41 (CLK), 40 (DT)
+6.  **ENCODER** (Input) - Pin 40 (CLK), 41 (DT)
 7.  **SERVO Motor** (Output) - Pin 18
 8.  **STEPPER Motor** (Output) - Pin 4, 7, 8, 9
 
