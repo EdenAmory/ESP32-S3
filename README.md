@@ -1,8 +1,8 @@
 # ESP32-S3 Embedded System
 
-**Nama:** Nathaniel Eden Amory
-**NRP:** 3223600015
-**Mata Kuliah:** Embedded System
+**Nama:** Nathaniel Eden Amory  
+**NRP:** 3223600015  
+**Mata Kuliah:** Embedded System  
 **Deskripsi:** Implementasi dan pengujian Input/Output (I/O) pada ESP32-S3 menggunakan FreeRTOS (Multi-Tasking) untuk 8 komponen I/O Menggunakan Wokwi.
 
 
