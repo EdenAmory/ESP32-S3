@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "author": "Eden_ESP32",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 304.53,
+      "left": 7.52,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_mod",
+      "top": 265.2,
+      "left": 176.6,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "tombolA",
+      "top": 192.1,
+      "left": 44.7,
+      "rotate": 270,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled_mod",
+      "top": 166.34,
+      "left": -76.57,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    { "type": "wokwi-ky-040", "id": "rot_mod", "top": 337.7, "left": -260, "attrs": {} },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "step_mod",
+      "top": 682.47,
+      "left": -257.69,
+      "rotate": 270,
+      "attrs": { "size": "17" }
+    },
+    { "type": "wokwi-servo", "id": "srv_mod", "top": 650.8, "left": 153.6, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz_mod",
+      "top": 525.3,
+      "left": 215.7,
+      "rotate": 90,
+      "attrs": { "volume": "0.2" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_mod",
+      "top": 509.8,
+      "left": -231.7,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "tombolB",
+      "top": 192.1,
+      "left": 111.9,
+      "rotate": 270,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:2", "led_mod:A", "green", [ "v-19.2", "h297.6" ] ],
+    [ "pot_mod:SIG", "esp:5", "green", [] ],
+    [ "pot_mod:VCC", "esp:3V3.1", "red", [] ],
+    [ "rot_mod:CLK", "esp:41", "green", [] ],
+    [ "rot_mod:DT", "esp:40", "green", [] ],
+    [ "rot_mod:VCC", "esp:3V3.1", "red", [] ],
+    [ "buzz_mod:2", "esp:46", "green", [] ],
+    [ "srv_mod:PWM", "esp:18", "green", [] ],
+    [ "srv_mod:V+", "esp:3V3.2", "red", [] ],
+    [ "step_mod:A+", "esp:7", "green", [] ],
+    [ "step_mod:A-", "esp:8", "green", [] ],
+    [ "step_mod:B+", "esp:9", "green", [] ],
+    [ "step_mod:B-", "esp:4", "green", [] ],
+    [ "oled_mod:VCC", "esp:3V3.1", "red", [ "v201.6", "h-19.05", "v0", "h-9.6" ] ],
+    [ "esp:GND.4", "tombolB:2.l", "black", [ "v0" ] ],
+    [ "esp:GND.4", "tombolA:2.l", "black", [ "v-86.4", "h-67.2" ] ],
+    [ "oled_mod:GND", "esp:GND.4", "black", [ "v134.4", "h124.8" ] ],
+    [ "esp:GND.4", "led_mod:C", "black", [ "v0" ] ],
+    [ "esp:GND.1", "buzz_mod:1", "black", [ "v0" ] ],
+    [ "pot_mod:GND", "esp:GND.1", "black", [ "h316.8" ] ],
+    [ "srv_mod:GND", "esp:GND.1", "black", [ "h0", "v-144" ] ],
+    [ "tombolA:1.l", "esp:35", "green", [ "v0" ] ],
+    [ "oled_mod:SDA", "esp:38", "green", [ "v115.2", "h57.67" ] ],
+    [ "oled_mod:SCL", "esp:39", "green", [ "v153.6", "h48.3" ] ],
+    [ "esp:19", "tombolB:1.l", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
