@@ -10,8 +10,8 @@
 #define BUTTON_A       35
 #define BUTTON_B       19
 #define POT_INPUT      5
-#define ENC_CLK        41
-#define ENC_DT         40
+#define ENC_CLK        40
+#define ENC_DT         41
 #define OLED_SDA       38
 #define OLED_SCL       39
 #define SERVO_PIN      18
@@ -102,21 +102,27 @@ void taskOLED(void *pv) {
 
 // ======================= ENCODER TASK ==========================
 void taskEncoder(void *pv) {
-  pinMode(ENC_CLK, INPUT);
-  pinMode(ENC_DT, INPUT);
+  pinMode(ENC_CLK, INPUT_PULLUP);
+  pinMode(ENC_DT, INPUT_PULLUP);
 
-  prevClk = digitalRead(ENC_CLK);
+  int lastClk = digitalRead(ENC_CLK);
 
   while (1) {
-    int clk = digitalRead(ENC_CLK);
-    if (clk != prevClk) {
-      if (digitalRead(ENC_DT) == clk) encValue++; else encValue--;
+    int currentClk = digitalRead(ENC_CLK);
+
+    if (lastClk == HIGH && currentClk == LOW) {
+
+      if (digitalRead(ENC_DT) == HIGH) encValue++;
+      else encValue--;
+
       Serial.printf("[ENC] %d Core %d\n", encValue, xPortGetCoreID());
     }
-    prevClk = clk;
-    vTaskDelay(5);
+
+    lastClk = currentClk;
+    vTaskDelay(1 / portTICK_PERIOD_MS);
   }
 }
+
 
 // ======================= SERVO TASK ==========================
 void taskServo(void *pv) {
@@ -157,28 +163,28 @@ void setup() {
   delay(300);
 
   // LED
-  //xTaskCreatePinnedToCore(taskLED, "taskLED", 4000, NULL, 1, NULL, 1);
+  //xTaskCreatePinnedToCore(taskLED, "taskLED", 4000, NULL, 1, NULL, 0);
 
   // BUZZER
-  //xTaskCreatePinnedToCore(taskBuzzer, "taskBuzzer", 4000, NULL, 1, NULL, 1);
+  //TaskCreatePinnedToCore(taskBuzzer, "taskBuzzer", 4000, NULL, 1, NULL, 0);
 
   // BUTTON
-  //xTaskCreatePinnedToCore(taskButton, "taskButton", 4000, NULL, 1, NULL, 0);
+  //xTaskCreatePinnedToCore(taskButton, "taskButton", 4000, NULL, 1, NULL, 1);
 
   // POT
-  //xTaskCreatePinnedToCore(taskPot, "taskPot", 4000, NULL, 1, NULL, 1);
+  //xTaskCreatePinnedToCore(taskPot, "taskPot", 4000, NULL, 1, NULL, 0);
 
   // OLED
-  //xTaskCreatePinnedToCore(taskOLED, "taskOLED", 6000, NULL, 1, NULL, 1);
+  //xTaskCreatePinnedToCore(taskOLED, "taskOLED", 6000, NULL, 1, NULL, 0);
 
   // ENCODER
-  //xTaskCreatePinnedToCore(taskEncoder, "taskEncoder", 4000, NULL, 1, NULL, 1);
+  //xTaskCreatePinnedToCore(taskEncoder, "taskEncoder", 4000, NULL, 1, NULL, 0);
 
   // SERVO
-  //xTaskCreatePinnedToCore(taskServo, "taskServo", 5000, NULL, 1, NULL, 1);
+  //xTaskCreatePinnedToCore(taskServo, "taskServo", 5000, NULL, 1, NULL, 0);
 
   // STEPPER
-  //xTaskCreatePinnedToCore(taskStepper, "taskStepper", 7000, NULL, 1, NULL, 1);
+  //xTaskCreatePinnedToCore(taskStepper, "taskStepper", 7000, NULL, 1, NULL, 0);
 }
 
 // ======================== LOOP ==========================
