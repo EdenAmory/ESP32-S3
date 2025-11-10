@@ -5,6 +5,7 @@
 **Mata Kuliah:** Embedded System  
 **Deskripsi:** Implementasi dan pengujian Input/Output (I/O) pada ESP32-S3 menggunakan FreeRTOS (Multi-Tasking) untuk 8 komponen I/O Menggunakan Wokwi.
 
+<img width="1915" height="720" alt="image" src="https://github.com/user-attachments/assets/88be48e1-f0bf-4193-a9b8-49b80b49902e" />
 
 ## Komponen I/O yang Diuji (1-8)
 
