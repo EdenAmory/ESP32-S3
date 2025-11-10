@@ -157,7 +157,7 @@ void setup() {
   delay(300);
 
   // LED
-  xTaskCreatePinnedToCore(taskLED, "taskLED", 4000, NULL, 1, NULL, 1);
+  //xTaskCreatePinnedToCore(taskLED, "taskLED", 4000, NULL, 1, NULL, 1);
 
   // BUZZER
   //xTaskCreatePinnedToCore(taskBuzzer, "taskBuzzer", 4000, NULL, 1, NULL, 1);
