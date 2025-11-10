@@ -74,8 +74,6 @@
     [ "esp:2", "led_mod:A", "green", [ "v-19.2", "h297.6" ] ],
     [ "pot_mod:SIG", "esp:5", "green", [] ],
     [ "pot_mod:VCC", "esp:3V3.1", "red", [] ],
-    [ "rot_mod:CLK", "esp:41", "green", [] ],
-    [ "rot_mod:DT", "esp:40", "green", [] ],
     [ "rot_mod:VCC", "esp:3V3.1", "red", [] ],
     [ "buzz_mod:2", "esp:46", "green", [] ],
     [ "srv_mod:PWM", "esp:18", "green", [] ],
@@ -95,7 +93,9 @@
     [ "tombolA:1.l", "esp:35", "green", [ "v0" ] ],
     [ "oled_mod:SDA", "esp:38", "green", [ "v115.2", "h57.67" ] ],
     [ "oled_mod:SCL", "esp:39", "green", [ "v153.6", "h48.3" ] ],
-    [ "esp:19", "tombolB:1.l", "green", [ "v0" ] ]
+    [ "esp:19", "tombolB:1.l", "green", [ "v0" ] ],
+    [ "rot_mod:DT", "esp:41", "green", [ "h0" ] ],
+    [ "rot_mod:CLK", "esp:40", "green", [ "h0" ] ]
   ],
   "dependencies": {}
 }
