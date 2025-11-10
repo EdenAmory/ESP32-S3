@@ -23,5 +23,5 @@
 ## Dokumentasi
 
 * **Kode Program:** [ESP32 S3 (Nathaniel Eden Amory 3223600015)/sketch.ino](https://github.com/EdenAmory/ESP32-S3/blob/main/ESP32%20S3%20(Nathaniel%20Eden%20Amory%203223600015)/sketch.ino)
-* **Hasil Langkah Percobaan:**
+* **Hasil Langkah Percobaan:** https://drive.google.com/drive/folders/19pNoST1SplbG3yboXNJo-H9qc_hkd47Z?usp=sharing
 
