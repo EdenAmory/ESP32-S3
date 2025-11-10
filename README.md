@@ -21,6 +21,6 @@
 
 ## Dokumentasi
 
-* **Kode Program:**
+* **Kode Program:** ESP32 S3 (Nathaniel Eden Amory 3223600015)/sketch.ino
 * **Hasil Langkah Percobaan:**
 
